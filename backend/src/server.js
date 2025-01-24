@@ -2,8 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const initinitializeDb = require('./database/connection.database').initializeDb;
 const cors = require('cors');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
 
 const app = express();
 const port = process.env.PORT;
@@ -16,8 +14,7 @@ initinitializeDb((error) => {
         app.use(cors({
                 origin: process.env.ALLOWED_ORIGIN,                
             }))
-            .use(express.json())
-            .use(cookieParser())
+            .use(express.json())            
             .use(express.urlencoded({ extended: true }))
             .use('/api/v1', require('./routes'))
             .use(async (_req, _res, next) => {
