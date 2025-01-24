@@ -26,7 +26,7 @@ export class AuthService {
   login(accountLogin: AccountLoginResquest) {
     return this.httpClient.post<AccountLoginResponse>(`${environment.apiBaseUrl}/accounts/login`, accountLogin, httpOptions).pipe(
       tap((response: AccountLoginResponse) => {
-        localStorage.setItem(accessTokenStorageKey, response.accessToken);
+        sessionStorage.setItem(accessTokenStorageKey, response.accessToken);
         this.isAdmin = response.isAdmin;
       })
     );
@@ -35,14 +35,14 @@ export class AuthService {
   logout() {
     return this.httpClient.post(`${environment.apiBaseUrl}/accounts/logout`, null, httpOptions).pipe(
       tap(() => {
-        localStorage.removeItem(accessTokenStorageKey);
+        sessionStorage.removeItem(accessTokenStorageKey);
         this.isAdmin = false;
       })
     );
   }
 
   isAuthenticated() {
-    return !!localStorage.getItem(accessTokenStorageKey);
+    return !!sessionStorage.getItem(accessTokenStorageKey);
   }
 
   isAdminUser() {
