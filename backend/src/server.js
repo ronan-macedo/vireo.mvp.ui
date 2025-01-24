@@ -11,9 +11,7 @@ initinitializeDb((error) => {
         console.log(error);
         process.exit(1);
     } else {
-        app.use(cors({
-                origin: process.env.ALLOWED_ORIGIN,                
-            }))
+        app.use(cors())
             .use(express.json())            
             .use(express.urlencoded({ extended: true }))
             .use('/api/v1', require('./routes'))
