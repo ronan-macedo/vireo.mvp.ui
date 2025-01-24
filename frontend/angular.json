@@ -71,8 +71,7 @@
               "buildTarget": "vireo-mvp-frontend:build:production"
             },
             "development": {
-              "buildTarget": "vireo-mvp-frontend:build:development",
-              "proxyConfig": "src/proxy.config.json"
+              "buildTarget": "vireo-mvp-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
