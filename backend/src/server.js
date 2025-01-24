@@ -13,14 +13,8 @@ initinitializeDb((error) => {
         console.log(error);
         process.exit(1);
     } else {
-        app.use(session({
-                secret: process.env.SECRET,
-                resave: true,
-                saveUninitialized: true,
-            }))
-            .use(cors({
-                origin: process.env.ALLOWED_ORIGIN,
-                credentials: true,
+        app.use(cors({
+                origin: process.env.ALLOWED_ORIGIN,                
             }))
             .use(express.json())
             .use(cookieParser())
