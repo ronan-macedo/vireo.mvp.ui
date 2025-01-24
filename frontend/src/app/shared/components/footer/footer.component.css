@@ -1,0 +1,18 @@
+.bottom-footer {
+    background-color: var(--primary);
+    border-top: .25rem solid var(--primary-dark);
+    bottom: 0;
+    color: var(--black);
+    left: 0;    
+    position: fixed;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+}
+
+@media screen and (min-width: 48rem) {
+    .bottom-footer {
+        bottom: 0;
+        position: absolute;
+    }
+}

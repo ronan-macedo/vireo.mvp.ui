@@ -1,0 +1,100 @@
+:root {
+    --primary-light: #ffddb8;
+    --primary: #e9c4a0;
+    --primary-dark: #d1a981;
+    --secondary: #b9ddff;
+    --secondary-light: #fcfcfc;
+    --secondary-dark: #96badf;
+    --background: #f8f9fa;
+    --on-background: rgba(0, 0, 0, 0.87);
+    --surface: #fff;
+    --on-surface: rgba(0, 0, 0, 0.87);
+    --error: #b00020;
+    --on-error: #fff;
+    --success: #00796b;
+    --on-success: #fff;
+    --warning: #b97705;
+    --on-warning: rgba(0, 0, 0, 0.87);
+    --info: #2196f3;
+    --on-info: #fff;
+    --text-high-emphasis: rgba(0, 0, 0, 0.87);
+    --text-medium-emphasis: rgba(0, 0, 0, 0.6);
+    --text-disabled: rgba(0, 0, 0, 0.38);
+    --divider: rgba(0, 0, 0, 0.12);
+    --white: #fff;
+    --black: #000;
+}
+
+html {
+    font-family: "Roboto Condensed", serif;
+    color: var(--black);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: .85rem;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    max-width: 100%;
+    min-height: 80vh;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.button-primary {
+    background-color: var(--primary);
+    color: var(--black);
+    padding: .5rem .5rem;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.button-primary:disabled {
+    opacity: 0.5;
+}
+
+.warning {
+    color: var(--warning);
+}
+
+.info {
+    color: var(--info);
+}
+
+.error {
+    color: var(--error);
+}
+
+@media screen and (min-width: 48rem) {
+    body {
+        font-size: .95rem;
+    }
+
+    .container {        
+        max-width: 100vw;
+        height: 100vh;
+    }
+}
